@@ -28,6 +28,23 @@ const tourismSchema = new mongoose.Schema({
     
 });
 
-const Tourism = mongoose.model('Tourism', tourismSchema);
+const LoginSchema = new mongoose.Schema({
+    name : {
+        type: String,
+        required: true
+    },
+    email : {
+        type: String,
+        required: true
+    },
+    password : {
+        type: String,
+        required: true
+    },
+})
 
-module.exports = Tourism;
+const Tourism = mongoose.model('Tourism', tourismSchema);
+const TourismLoginData = mongoose.model('LoginData', LoginSchema);
+
+
+module.exports = {Tourism,TourismLoginData};

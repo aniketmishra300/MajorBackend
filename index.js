@@ -8,7 +8,12 @@ app.use(cors({
     origin: "*"
 }))
 
+
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
 app.use("/",route)
+
 
 app.listen(5500,()=>{
     connection()
